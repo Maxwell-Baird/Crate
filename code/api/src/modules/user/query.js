@@ -12,6 +12,7 @@ export const users = {
 }
 
 // By ID
+//Returns an user based on their id
 export const user = {
   type: UserType,
   args: {
@@ -21,6 +22,8 @@ export const user = {
 }
 
 // Auth
+//Returns an user info if they have submitted the right email and password associate
+//with the user
 export const userLogin = {
   type: UserLoginType,
   args: {
@@ -43,6 +46,7 @@ export const userLogin = {
 }
 
 // Genders
+// returns the gender of the users in the name field
 export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders

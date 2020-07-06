@@ -1,0 +1,17 @@
+The files that will be updated for this project are the following:
+
+-src/migrations/1-user.js
+For this file we will need to add fields that will hold the picture, description
+and dates available
+
+
+-src/modules/user/model.js
+The model for a user will need to be updated in order to hold the migrations that
+will add the picture, description, and date
+-src/modules/user/mutation.js
+We will need two new mutations that will allow the user to change his profile and
+the dates available for pickup
+-src/modules/user/resolvers.js
+Here we will need to have functions that updates the user info and updates the dates
+-src/modules/user/types.js
+The UserType will have to be updated for the new fields that have been added

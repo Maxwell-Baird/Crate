@@ -2,6 +2,7 @@
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
 // User type
+// Defines the user and the fields they use and what can be access by querys
 const UserType = new GraphQLObjectType({
   name: 'user',
   description: 'User type',

@@ -8,6 +8,7 @@ import params from '../../config/params'
 import models from '../../setup/models'
 
 // Create
+//This function creates an user and is called upon in userSignup in mutations
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
   const user = await models.User.findOne({ where: { email } })
@@ -16,9 +17,11 @@ export async function create(parentValue, { name, email, password }) {
     // User does not exists
     const passwordHashed = await bcrypt.hash(password, serverConfig.saltRounds)
 
+    //returns the newly created user
     return await models.User.create({
       name,
       email,
+      //Makes the password a secret
       password: passwordHashed
     })
   } else {
@@ -27,22 +30,26 @@ export async function create(parentValue, { name, email, password }) {
   }
 }
 
+//This function logs in the user and is used by userLogin in the query file
 export async function login(parentValue, { email, password }) {
+  //Finds a user based off the submitted email
   const user = await models.User.findOne({ where: { email } })
 
   if (!user) {
     // User does not exists
     throw new Error(`We do not have any user registered with ${ email } email address. Please signup.`)
   } else {
+    //returns the details about the user
     const userDetails = user.get()
 
     // User exists
     const passwordMatch = await bcrypt.compare(password, userDetails.password)
-
+    //Checks if the user password matchs the password given
     if (!passwordMatch) {
       // Incorrect password
       throw new Error(`Sorry, the password you entered is incorrect. Please try again.`)
     } else {
+      //returns the user details
       const userDetailsToken = {
         id: userDetails.id,
         name: userDetails.name,
@@ -58,17 +65,17 @@ export async function login(parentValue, { email, password }) {
   }
 }
 
-// Get by ID
+// Gets a user by ID
 export async function getById(parentValue, { id }) {
   return await models.User.findOne({ where: { id } })
 }
 
-// Get all
+// Gets all users
 export async function getAll() {
   return await models.User.findAll()
 }
 
-// Delete
+// Deletes an user
 export async function remove(parentValue, { id }) {
   return await models.User.destroy({ where: { id } })
 }

@@ -6,6 +6,7 @@ import { UserType } from './types'
 import { create, remove } from './resolvers'
 
 // Create
+//Creates an user based off the form info that they have sent
 export const userSignup = {
   type: UserType,
   args: {
@@ -24,10 +25,12 @@ export const userSignup = {
       type: GraphQLString
     }
   },
+  // Calls upon the create function inside the resolvers file
   resolve: create
 }
 
 // Remove
+//Removes an user from the database
 export const userRemove = {
   type: UserType,
   args: {
@@ -36,5 +39,6 @@ export const userRemove = {
       type: GraphQLInt
     }
   },
+  // Calls upon the remove function inside the resolvers file
   resolve: remove
 }
