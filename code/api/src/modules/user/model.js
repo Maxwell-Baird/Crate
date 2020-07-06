@@ -1,6 +1,8 @@
 'use strict'
 
 // User
+// Defines a table in sequelize that graphql can interact with
+
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
     name: {
@@ -17,10 +19,10 @@ module.exports = function(sequelize, DataTypes) {
     }
   })
 // Add additional attributes: image, description, token, shipping address?
-
+// Defines relationships
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }
-
+// Returns the now-built User 
   return User
 }

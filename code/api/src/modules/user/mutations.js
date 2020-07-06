@@ -1,11 +1,14 @@
 // Imports
+// Imports GraphQL classes that will be used
 import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
+// Imports the type defined in file and resolver functions
 import { UserType } from './types'
 import { create, remove } from './resolvers'
 
 // Create
+// Defines a function to be called from main mutations file
 export const userSignup = {
   type: UserType,
   args: {
@@ -28,6 +31,7 @@ export const userSignup = {
 }
 
 // Remove
+// Defines a function to be called from main mutations file
 export const userRemove = {
   type: UserType,
   args: {

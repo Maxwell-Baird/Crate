@@ -6,6 +6,7 @@ import CrateType from './types'
 import { create, remove, update } from './resolvers'
 
 // Crate create
+// Defines a function to be called from main mutations file
 export const crateCreate = {
   type: CrateType,
   args: {
@@ -19,10 +20,12 @@ export const crateCreate = {
       type: GraphQLString
     }
   },
+  // Calls a resolve function to create data and respond
   resolve: create
 }
 
 // Crate update
+// Defines a function to be called from main mutations file
 export const crateUpdate = {
   type: CrateType,
   args: {
@@ -41,6 +44,7 @@ export const crateUpdate = {
       type: GraphQLString
     }
   },
+  // Calls a resolve function to update the data and respond
   resolve: update
 }
 
@@ -53,5 +57,6 @@ export const crateRemove = {
       type: GraphQLInt
     }
   },
+  // Calls a resolve function to remove the data and respond
   resolve: remove
 }

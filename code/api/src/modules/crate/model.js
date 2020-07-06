@@ -1,5 +1,5 @@
 'use strict'
-
+// Defines a table in sequelize that graphql can interact with
 module.exports = function(sequelize, DataTypes) {
   let Crate = sequelize.define('crates', {
     name: {
@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-
+// Defines relationships
   Crate.associate = function(models) {
     Crate.hasMany(models.Subscription)
   }

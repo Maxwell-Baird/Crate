@@ -6,6 +6,7 @@ import SubscriptionType from './types'
 import { create, remove } from './resolvers'
 
 // Subscription create
+// Defines a function to be called from main mutations file
 export const subscriptionCreate = {
   type: SubscriptionType,
   args: {
@@ -18,6 +19,7 @@ export const subscriptionCreate = {
 }
 
 // Subscription remove
+// Defines a function to be called from main mutations file
 export const subscriptionRemove = {
   type: SubscriptionType,
   args: {

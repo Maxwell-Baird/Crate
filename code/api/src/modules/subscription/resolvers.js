@@ -1,6 +1,6 @@
 // App Imports
 import models from '../../setup/models'
-
+// All async functions designed to CRUD
 // Get subscription by ID
 export async function get(parentValue, { id }) {
   return await models.Subscription.findOne({

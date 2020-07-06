@@ -1,6 +1,8 @@
 'use strict'
 
 // Product
+// Defines a table in sequelize that graphql can interact with
+
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     name: {

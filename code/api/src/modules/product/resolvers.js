@@ -59,6 +59,7 @@ export async function create(parentValue, { name, slug, description, type, gende
 }
 
 // Update product
+// Async function that will update the product info
 export async function update(parentValue, { id, name, slug, description, type, gender, image }, { auth }) {
   if(auth.user && auth.user.role === params.user.roles.admin) {
     return await models.Product.update(
@@ -78,6 +79,7 @@ export async function update(parentValue, { id, name, slug, description, type, g
 }
 
 // Delete product
+// Async function that will run in background while deleting product
 export async function remove(parentValue, { id }, { auth }) {
   if(auth.user && auth.user.role === params.user.roles.admin) {
     const product = await models.Product.findOne({where: {id}})

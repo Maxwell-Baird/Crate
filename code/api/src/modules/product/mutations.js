@@ -6,6 +6,7 @@ import { ProductType } from './types'
 import { create, update, remove } from './resolvers'
 
 // Product create
+// Defines a function to be called from main mutations file
 export const productCreate = {
   type: ProductType,
   args: {
@@ -43,6 +44,7 @@ export const productCreate = {
 }
 
 // Product update
+// Defines a function to be called from main mutations file
 export const productUpdate = {
   type: ProductType,
   args: {
@@ -85,6 +87,7 @@ export const productUpdate = {
 }
 
 // Product remove
+// Defines a function to be called from main mutations file
 export const productRemove = {
   type: ProductType,
   args: {
