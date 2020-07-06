@@ -1,6 +1,7 @@
 'use strict'
 
 // User
+// Defining User object with multiple fields.
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
     name: {
@@ -16,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-
+// User has many association with subscription
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }

@@ -6,12 +6,14 @@ import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
 // All
+// User index. Query returns all users.
 export const users = {
   type: new GraphQLList(UserType),
   resolve: getAll
 }
 
 // By ID
+// User show. Query returns a single user.
 export const user = {
   type: UserType,
   args: {

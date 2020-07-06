@@ -15,6 +15,7 @@ export const crates = {
 }
 
 // Crate By ID
+// Crate show. Query returns a single crate.
 export const crateById = {
   type: CrateType,
   args: {
