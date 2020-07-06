@@ -57,6 +57,7 @@ export async function login(parentValue, { email, password }) {
     }
   }
 }
+//Add async functions for attr updates
 
 // Get by ID
 export async function getById(parentValue, { id }) {

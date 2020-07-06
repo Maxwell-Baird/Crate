@@ -43,3 +43,6 @@ export const productTypes = {
   type: new GraphQLList(ProductTypesType),
   resolve: getTypes
 }
+
+// Products by crate functionality?
+// Products returned/not returned

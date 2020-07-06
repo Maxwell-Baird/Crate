@@ -37,3 +37,4 @@ module.exports = {
     return queryInterface.dropTable('subscriptions');
   }
 }
+// Update migrations for model changes

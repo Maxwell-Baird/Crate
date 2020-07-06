@@ -23,3 +23,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   })
 }
+
+// Update relationship for products within crate, to help with products kept functionality
+// If above is added, also implement a returned boolean for each product

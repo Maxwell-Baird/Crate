@@ -16,7 +16,7 @@ const UserType = new GraphQLObjectType({
     updatedAt: { type: GraphQLString }
   })
 })
-
+//Update type to reflect model changes
 // User Login type
 const UserLoginType = new GraphQLObjectType({
   name: 'userAuth',

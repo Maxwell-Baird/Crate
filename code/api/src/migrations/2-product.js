@@ -39,3 +39,4 @@ module.exports = {
     return queryInterface.dropTable('products');
   }
 }
+// Update migrations for model changes

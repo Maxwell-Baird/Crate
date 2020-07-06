@@ -18,5 +18,6 @@ const SubscriptionType = new GraphQLObjectType({
     updatedAt: { type: GraphQLString }
   })
 })
+// Update to reflect model changes for shipping
 
 export default SubscriptionType

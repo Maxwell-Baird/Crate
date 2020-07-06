@@ -27,3 +27,4 @@ module.exports = {
     return queryInterface.dropTable('crates');
   }
 }
+// Update migrations for model changes

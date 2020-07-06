@@ -13,6 +13,6 @@ module.exports = function(sequelize, DataTypes) {
   Crate.associate = function(models) {
     Crate.hasMany(models.Subscription)
   }
-
+// Update relationship to products
   return Crate
 }

@@ -97,3 +97,5 @@ export async function remove(parentValue, { id }, { auth }) {
 export async function getTypes() {
   return Object.values(params.product.types)
 }
+
+// Get products by crate resolver if implemented

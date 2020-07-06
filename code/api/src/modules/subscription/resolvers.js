@@ -59,3 +59,5 @@ export async function remove(parentValue, { id }, { auth }) {
     throw new Error('Access denied.')
   }
 }
+
+// Create resolver for updating attributes for shipping

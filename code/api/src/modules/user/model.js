@@ -16,6 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
+// Add additional attributes: image, description, token, shipping address?
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)

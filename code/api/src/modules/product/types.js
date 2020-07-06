@@ -18,6 +18,7 @@ const ProductType = new GraphQLObjectType({
     updatedAt: { type: GraphQLString }
   })
 })
+// Update to reflect model changes
 
 // User Gender type
 const ProductTypesType = new GraphQLObjectType({
