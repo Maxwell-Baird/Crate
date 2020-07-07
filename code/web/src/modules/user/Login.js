@@ -35,7 +35,7 @@ class Login extends Component {
       }
     }
 
-    // Function bindings 
+    // Function bindings
   }
 
   onChange = (event) => {
@@ -49,7 +49,7 @@ class Login extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-
+    
     this.props.messageShow('Logging in, please wait...')
 
     this.props.login(this.state.user)

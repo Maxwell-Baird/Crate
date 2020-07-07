@@ -29,13 +29,18 @@ const Profile = (props) => (
         <H3 font="secondary">My profile</H3>
       </GridCell>
     </Grid>
-    // profile information will go here 
+    {console.log(props)}
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
 
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
-
+        {/* user description */}
+        {/* user image */}
+        {/* shipping address */}
+        {/* availability (days and times) */}
+        {/* product history (past orders) */}
+        {/* upcoming deliveries */}
         <Link to={userRoutes.subscriptions.path}>
           <Button theme="primary">Subscriptions</Button>
         </Link>
