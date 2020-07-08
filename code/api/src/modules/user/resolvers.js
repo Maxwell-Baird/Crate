@@ -78,11 +78,14 @@ export async function getGenders() {
   return Object.values(params.user.gender)
 }
 
-export async function update(parentValue, { id, email, shippingAddress}) {
+export async function update(parentValue,{ id, email, shippingAddress, name, description, userImage}) {
   return await models.User.update(
     {
       email,
-      shippingAddress
+      shippingAddress,
+      name,
+      description,
+      userImage
     },
     { where: { id } }
   )

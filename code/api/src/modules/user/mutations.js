@@ -19,6 +19,18 @@ export const userUpdate = {
     shippingAddress: {
       name: 'email',
       type: GraphQLString
+    },
+    name: {
+      name: 'name',
+      type: GraphQLString
+    },
+    description: {
+      name: 'description',
+      type: GraphQLString
+    },
+    userImage: {
+      name: 'userImage',
+      type: GraphQLString
     }
   },
   resolve: update
