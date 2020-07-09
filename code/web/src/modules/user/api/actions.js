@@ -13,7 +13,7 @@ export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 
 // Actions
-
+console.log('route', routeApi);
 // Set a user after login or using localStorage token
 export function setUser(token, user) {
   if (token) {
@@ -23,7 +23,7 @@ export function setUser(token, user) {
   }
 
   return { type: SET_USER, user }
-} 
+}
 
 // Login a user using credentials
 export function login(userCredentials, isLoading = true) {
@@ -36,7 +36,7 @@ export function login(userCredentials, isLoading = true) {
     return axios.post(routeApi, query({
       operation: 'userLogin',
       variables: userCredentials,
-      fields: ['user {name, email, role}', 'token']
+      fields: ['user {name, email, role, shippingAddress, description, userImage}', 'token']
     }))
       .then(response => {
         let error = ''
