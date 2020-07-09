@@ -29,23 +29,27 @@ const Profile = (props) => (
         <H3 font="secondary">My profile</H3>
       </GridCell>
     </Grid>
-    {console.log(props)}
+
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
 
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
-        {/* user description */}
-        {/* user image */}
-        {/* shipping address */}
+        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.shippingAddress}</p>
+        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.description}</p>
+        <img src={props.user.details.userImage}/>
         {/* availability (days and times) */}
         {/* product history (past orders) */}
         {/* upcoming deliveries */}
         <Link to={userRoutes.subscriptions.path}>
           <Button theme="primary">Subscriptions</Button>
         </Link>
-
+        
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
+
+        <Link to={userRoutes.editableProfile.path}>
+          <Button style={{ marginLeft: '2em'}} theme="primary">Edit Profile</Button>
+        </Link>
       </GridCell>
     </Grid>
   </div>
