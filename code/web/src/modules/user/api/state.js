@@ -7,7 +7,7 @@ export const userInitialState = {
   error: null,
   isLoading: false,
   isAuthenticated: false,
-  details: null
+  details: null 
 }
 
 // State
