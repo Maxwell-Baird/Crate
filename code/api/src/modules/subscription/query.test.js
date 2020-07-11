@@ -32,30 +32,29 @@ describe("subscription queries", () => {
     }
   });
 
-  it("can get subscriptions linked to a user id", async() => {
-    // requires Auth Token to be sent, was unable to complete the aspect in time
-    
-    // const userResponse = await request(server)
-    // .get('/')
-    // .send({ query: '{userLogin(email: "user@crate.com" password: "123456" role: "USER") { user { id } token }}'})
-    // .expect(200);
-    //
-    // const response = await request(server)
-    // .get('/')
-    // .set('Authorization', userResponse.body.data.userLogin.token)
-    // .send({ query: '{ subscriptionsByUser { id user { id } crate { id }}}',
-    //         variables: '{ token = ${userResponse.token} }'})
-    // .expect(200);
-    //
-    // console.log(userResponse.body.data.userLogin.token);
-    // console.log(response.body.data);
-    // expect(response.body.data).toHaveProperty('subscriptionsByUser');
-    // expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('id');
-    // expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('user');
-    // expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('crate');
-  });
+  //it("can get subscriptions linked to a user id", async() => {
+  //  const userResponse = await request(server)
+  //  .get('/')
+  //  .send({ query: '{userLogin(email: "user@crate.com" password: "123456" role: "USER") { user { id } token }}'})
+  //  .expect(200);
 
-  it("can get a subscription by id", async() => {
+  //  const response = await request(server)
+  //  .get('/')
+  //  .set('Authorization', userResponse.body.data.userLogin.token)
+  //  .send({ query: '{ subscriptionsByUser { id user { id } crate { id }}}',
+  //          variables: '{ token = ${userResponse.token} }'})
+  //  .expect(200);
+
+  //  console.log(userResponse.body.data.userLogin.token);
+  //  console.log(response.body.data);
+  //  expect(response.body.data).toHaveProperty('subscriptionsByUser');
+  //  expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('id');
+  //  expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('user');
+  //  expect(response.body.data.subscriptionsByUser[0]).toHaveProperty('crate');
+//  });
+
+
+it("can get a subscription by id", async() => {
     const response = await request(server)
     .get('/')
     .send({ query: '{ subscription(id: 1) { id user { id } crate { id }}}'})
