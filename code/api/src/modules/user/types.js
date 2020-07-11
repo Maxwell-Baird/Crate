@@ -2,7 +2,7 @@
 'use strict'
 import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList } from 'graphql'
 import SubscriptionType from '../subscription/types'
-
+import ItemType from '../item/types'
 // User type
 const UserType = new GraphQLObjectType({
   name: 'user',
@@ -19,7 +19,8 @@ const UserType = new GraphQLObjectType({
     userImage: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString },
-    subscriptions: { type: new GraphQLList(SubscriptionType)}
+    subscriptions: { type: new GraphQLList(SubscriptionType)},
+    items: { type: new GraphQLList(ItemType)}
   })
 })
 
