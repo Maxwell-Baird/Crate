@@ -13,16 +13,20 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     },
     role: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      defaultValue: "USER"
     },
     description: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      defaultValue: "Placeholder description."
     },
     shippingAddress: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      defaultValue: "Placeholder address."
     },
     userImage: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      defaultValue: "https://i.imgflip.com/23j9y5.jpg"
     }
   })
 

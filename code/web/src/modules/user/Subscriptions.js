@@ -25,7 +25,7 @@ class Subscriptions extends PureComponent {
 
   // Runs on client only
   componentDidMount() {
-    this.props.getListByUser()
+    this.props.getListByUser() 
   }
 
   render() {

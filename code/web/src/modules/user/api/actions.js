@@ -7,13 +7,14 @@ import cookie from 'js-cookie'
 import { routeApi } from '../../../setup/routes'
 
 // Actions Types
+export const UPDATE_USER = 'AUTH/UPDATE_USER'
 export const LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST'
 export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 
 // Actions
-
+console.log('route', routeApi);
 // Set a user after login or using localStorage token
 export function setUser(token, user) {
   if (token) {
@@ -36,7 +37,7 @@ export function login(userCredentials, isLoading = true) {
     return axios.post(routeApi, query({
       operation: 'userLogin',
       variables: userCredentials,
-      fields: ['user {name, email, role}', 'token']
+      fields: ['user {name, email, role, shippingAddress, description, userImage}', 'token']
     }))
       .then(response => {
         let error = ''
@@ -116,4 +117,27 @@ export function getGenders() {
       fields: ['id', 'name']
     }))
   }
+}
+
+// Update a user information
+export function updateUserInformation(userDetails) {
+  return dispatch => {
+    return axios.post(routeApi, mutation({
+      operation: 'editUser',
+      variables: userDetails,
+      fields: ['id', 'name', 'email', 'shippingAddress', 'description']
+    }))
+    .then(respone => {
+      editProfileSetLocalStorageAndCookie(userDetails)
+      dispatch({
+        type: UPDATE_USER,
+        userDetails
+      })
+    })
+  }
+}
+
+const editProfileSetLocalStorageAndCookie = (user) => {
+  const userObject = {email: user.email, name: user.name, role: 'user', shippingAddress: user.shippingAddress}
+  window.localStorage.setItem('user', JSON.stringify(userObj))
 }
