@@ -33,18 +33,27 @@ const Profile = (props) => (
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
-
-        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
-        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.shippingAddress}</p>
-        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.description}</p>
-        <img src={props.user.details.userImage}/>
-        {/* availability (days and times) */}
-        {/* product history (past orders) */}
-        {/* upcoming deliveries */}
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+          <img style={{ width: '30%' }} src={props.user.details.userImage}/>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', flexDirection: 'row'}}>
+              <p style={{ color: grey2, marginBottom: '2em' }}>Email: </p>
+              <p style={{ color: grey2, marginBottom: '2em' }}> {props.user.details.email}</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'row'}}>
+              <p style={{ color: grey2, marginBottom: '2em' }}>Shipping Address:</p>
+              <p style={{ color: grey2, marginBottom: '2em' }}> {props.user.details.shippingAddress}</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'row'}}>
+              <p style={{ color: grey2, marginBottom: '2em' }}>Your Description: </p>
+              <p style={{ color: grey2, marginBottom: '2em' }}> {props.user.details.description}</p>
+            </div>
+          </div>
+        </div>
         <Link to={userRoutes.subscriptions.path}>
           <Button theme="primary">Subscriptions</Button>
         </Link>
-        
+
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
 
         <Link to={userRoutes.editableProfile.path}>

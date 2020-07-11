@@ -137,7 +137,7 @@ export function updateUserInformation(userDetails) {
   }
 }
 
-const editProfileSetLocalStorageAndCookie = (user) => {
+export function editProfileSetLocalStorageAndCookie(user) {
   const userObject = {email: user.email, name: user.name, role: 'user', shippingAddress: user.shippingAddress}
   window.localStorage.setItem('user', JSON.stringify(userObj))
 }
