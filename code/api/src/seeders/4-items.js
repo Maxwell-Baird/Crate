@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         userId: 2,
-        productId: 1,
+        productId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
         status: "Kept",
@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         userId: 1,
-        productId: 1,
+        productId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
         status: "Kept",

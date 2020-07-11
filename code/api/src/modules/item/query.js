@@ -3,7 +3,7 @@ import { GraphQLString, GraphQLInt, GraphQLList } from 'graphql'
 
 // App Imports
 import ItemType  from './types'
-import { getAll,getById } from './resolvers'
+import { getAll, getById } from './resolvers'
 
 // Products All
 export const items = {
