@@ -8,6 +8,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     crateId: {
       type: DataTypes.INTEGER
+    },
+    nextDelivery: {
+      type: DataTypes.TEXT,
+      defaultValue: "Aug 01 2020"
     }
   })
 
