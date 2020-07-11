@@ -25,6 +25,8 @@
   "homepage": "https://github.com/atulmy/crate#readme",
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "jest": "^26.1.0",
+    "test": "^0.6.0"
   }
 }
