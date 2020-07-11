@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
   })
 
     Product.associate = function(models) {
-      Product.hasMany(models.Item)
+      User.hasMany(models.Item)
     }
 
     return Product
