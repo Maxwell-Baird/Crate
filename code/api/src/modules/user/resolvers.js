@@ -60,7 +60,11 @@ export async function login(parentValue, { email, password }) {
 
 // Get by ID
 export async function getById(parentValue, { id }) {
-  return await models.User.findOne({ where: { id } })
+  return await models.User.findOne({ where: { id },
+  include: [
+    {model: models.Subscription, as: 'subscriptions'},
+    {model: models.Item, as: 'items'}
+  ]})
 }
 
 // Get all
@@ -76,4 +80,17 @@ export async function remove(parentValue, { id }) {
 // User genders
 export async function getGenders() {
   return Object.values(params.user.gender)
+}
+
+export async function update(parentValue, { id, email, shippingAddress, name, description, userImage}) {
+  return await models.User.update(
+    {
+      email,
+      shippingAddress,
+      name,
+      description,
+      userImage
+    },
+    { where: { id } }
+  )
 }

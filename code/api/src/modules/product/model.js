@@ -22,4 +22,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-}
+
+    Product.associate = function(models) {
+      User.hasMany(models.Item)
+    }
+
+    return Product
+  }

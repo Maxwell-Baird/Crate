@@ -35,16 +35,45 @@ const Profile = (props) => (
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
 
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
-
+        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.shippingAddress}</p>
+        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.description}</p>
+        <img src={props.user.details.userImage}/>
+        {/* availability (days and times) */}
+        {/* product history (past orders) */}
+        {/* upcoming deliveries */}
         <Link to={userRoutes.subscriptions.path}>
           <Button theme="primary">Subscriptions</Button>
         </Link>
-
+        
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
+
+        <Link to={userRoutes.editableProfile.path}>
+          <Button style={{ marginLeft: '2em'}} theme="primary">Edit Profile</Button>
+        </Link>
       </GridCell>
     </Grid>
   </div>
 )
+
+// this grid will display the state props
+// button for editing the user profile will be here as well, will route to another page
+// to edit the profile, meaning another component (editProfile.js)
+// inside that component will have the ability to upload a user picture, set a description, edit dates available,
+// edit shipping and email address, see a history of products purchased / what's been kept.
+// and also see upcoming deliveries
+
+// components needed:
+// edit profile button - button displayed on profile
+// user image - section containing image tag  <img>
+// user description - P tag displayed on profile
+// dates available - P tag displayed on profile
+// product history - P tag displayed on profile
+// shipping and email address - P tag displayed on profile
+// upcoming deliveries - P tag displayed on profile
+
+// controlled form component to edit all of the above components - navigated to using edit profle button
+// for cohesiveness, stick to the same level and organization of styling used prior (components for H1s, ptags, etc)
+
 
 // Component Properties
 Profile.propTypes = {

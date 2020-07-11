@@ -71,3 +71,4 @@ describe("user queries", () => {
     expect(response.body.data.userGenders[0]).toHaveProperty('name');
   });
 })
+

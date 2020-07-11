@@ -37,7 +37,7 @@ class Signup extends Component {
         password: '',
       }
     }
-  }
+  } 
 
   onChange = (event) => {
     let user = this.state.user
