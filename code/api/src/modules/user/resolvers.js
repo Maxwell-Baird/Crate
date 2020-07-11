@@ -60,7 +60,11 @@ export async function login(parentValue, { email, password }) {
 
 // Get by ID
 export async function getById(parentValue, { id }) {
-  return await models.User.findOne({ where: { id } })
+  return await models.User.findOne({ where: { id },
+  include: [
+    {model: models.Subscription, as: 'subscriptions'},
+    {model: models.Item, as: 'items'}
+  ]})
 }
 
 // Get all
