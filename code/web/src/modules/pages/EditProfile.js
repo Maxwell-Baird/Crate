@@ -13,7 +13,6 @@ import { level1 } from '../../ui/common/shadows'
 import { white } from '../../ui/common/colors'
 
 // App Imports
-// import userRoutes from '../../setup/routes/user'
 import { updateUserInformation } from '../user/api/actions'
 
 // Component
