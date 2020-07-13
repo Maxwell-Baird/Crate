@@ -14,15 +14,15 @@ export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 
 // Actions
-console.log('route', routeApi);
+
 // Set a user after login or using localStorage token
 export function setUser(token, user) {
+  console.log('User for Eval', user);
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   } else {
     delete axios.defaults.headers.common['Authorization'];
   }
-
   return { type: SET_USER, user }
 }
 
@@ -37,7 +37,7 @@ export function login(userCredentials, isLoading = true) {
     return axios.post(routeApi, query({
       operation: 'userLogin',
       variables: userCredentials,
-      fields: ['user {name, email, role, shippingAddress, description, userImage}', 'token']
+      fields: ['user {id, name, email, role, shippingAddress, description, userImage}', 'token']
     }))
       .then(response => {
         let error = ''
@@ -47,7 +47,7 @@ export function login(userCredentials, isLoading = true) {
         } else if (response.data.data.userLogin.token !== '') {
           const token = response.data.data.userLogin.token
           const user = response.data.data.userLogin.user
-
+          
           dispatch(setUser(token, user))
 
           loginSetUserLocalStorageAndCookie(token, user)
@@ -123,11 +123,19 @@ export function getGenders() {
 export function updateUserInformation(userDetails) {
   return dispatch => {
     return axios.post(routeApi, mutation({
-      operation: 'editUser',
-      variables: userDetails,
-      fields: ['id', 'name', 'email', 'shippingAddress', 'description']
+      operation: 'userUpdate',
+      variables: {
+        id: userDetails.id,
+        email: userDetails.email,
+        shippingAddress: userDetails.shippingAddress,
+        name: userDetails.name,
+        description: userDetails.description,
+        userImage: userDetails.userImage,
+        role: userDetails.role
+      },
+      fields: ['id']
     }))
-    .then(respone => {
+    .then(response => {
       editProfileSetLocalStorageAndCookie(userDetails)
       dispatch({
         type: UPDATE_USER,
@@ -138,6 +146,6 @@ export function updateUserInformation(userDetails) {
 }
 
 export function editProfileSetLocalStorageAndCookie(user) {
-  const userObject = {email: user.email, name: user.name, role: 'user', shippingAddress: user.shippingAddress}
-  window.localStorage.setItem('user', JSON.stringify(userObj))
+  const userObject = {email: user.email, name: user.name, role: 'user', shippingAddress: user.shippingAddress, id: user.id, description: user.description, role: user.role}
+  window.localStorage.setItem('user', JSON.stringify(userObject))
 }
