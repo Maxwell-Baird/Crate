@@ -2,18 +2,7 @@
 Please include a summary of the change:
 
 
-Commit Emojis:
-:tada: Initial commit
-:construction: HTML modifications/updates.
-:art: CSS modifications/updates.
-:crystal_ball: JS modifications/updates.
-:lipstick: hotfix any code.
-:bar_chart: new tests
-:camera_flash: adding screenshots
-:bento: Adding new assets or images
-:pencil: DOCS (README.md)
-
-:beetle: If it is a bug or issue fix, describe the issue that was fixed.
+If it is a bug or issue fix, describe the issue that was fixed.
 
 
 If it is a new feature, describe the feature and the iteration of the project spec it addresses.
