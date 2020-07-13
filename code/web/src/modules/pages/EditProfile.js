@@ -21,26 +21,20 @@ class EditProfile extends Component {
 
   constructor(props) {
     super(props)
-
+    console.log('user', props.user);
     this.state = {
+      id: this.props.user.details.id,
       name: this.props.user.details.name,
       email: this.props.user.details.email,
-      password: '' ,
       description: this.props.user.details.description,
       shippingAddress: this.props.user.details.shippingAddress,
-      availability: {
-        daysAvailable: [],
-        timesAvailable: []
-      },
-      imageUrl: '',
-      pastPackages: [],
-      futurePackages: []
+      userImage: this.props.user.details.userImage,
+      role: this.props.user.details.role
     }
   }
 
   saveProfile = (e) => {
     e.preventDefault();
-    console.log("hello");
     this.props.updateUserInformation(this.state)
   }
 
