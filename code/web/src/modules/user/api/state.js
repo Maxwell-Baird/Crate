@@ -46,7 +46,7 @@ export default (state = userInitialState, action) => {
     case UPDATE_USER:
       return {
         ...state,
-        details: action
+        details: action.user
       }
 
     default:
