@@ -9,6 +9,10 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.TEXT
     },
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     password: {
       type: DataTypes.TEXT
     },
